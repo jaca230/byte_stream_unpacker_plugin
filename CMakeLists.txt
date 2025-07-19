@@ -112,6 +112,7 @@ set(ROOT_DICTIONARY_INCLUDE_OPTIONS "-I${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 append_target_includes_to_root_dict(analysis_pipeline::analysis_pipeline_core)
 append_target_includes_to_root_dict(analysis_pipeline::unpacker_data_products_core)
+append_target_includes_to_root_dict(TBB::tbb)
 append_target_includes_to_root_dict(analysis_pipeline::analysis_pipeline)
 
 file(GLOB_RECURSE STAGE_HEADERS CONFIGURE_DEPENDS
