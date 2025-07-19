@@ -11,15 +11,11 @@ ByteStreamUnpackerStage::~ByteStreamUnpackerStage() = default;
 void ByteStreamUnpackerStage::OnInit() {
     spdlog::debug("[{}] Initializing ByteStreamUnpackerStage", Name());
 
-    if (!parameters_.contains("input_product_name")) {
-        throw std::runtime_error("missing 'input_product_name' parameter");
-    }
-    input_product_name_ = parameters_["input_product_name"].get<std::string>();
+    input_product_name_ = parameters_.value("input_product_name", "bytestream_bank_DATA");
+    internal_product_name_ = parameters_.value("internal_product_name", "bytestream_bank_DATA");
 
-    if (!parameters_.contains("internal_product_name")) {
-        throw std::runtime_error("missing 'internal_product_name' parameter");
-    }
-    internal_product_name_ = parameters_["internal_product_name"].get<std::string>();
+    spdlog::debug("[{}] Using input_product_name='{}', internal_product_name='{}'",
+                  Name(), input_product_name_, internal_product_name_);
 
     local_config_ = std::make_shared<ConfigManager>();
     if (parameters_.contains("pipeline_config")) {
