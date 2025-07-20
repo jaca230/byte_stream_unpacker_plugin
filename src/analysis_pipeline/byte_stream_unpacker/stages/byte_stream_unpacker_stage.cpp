@@ -45,7 +45,9 @@ void ByteStreamUnpackerStage::OnInit() {
 
 void ByteStreamUnpackerStage::Process() {
     if (!getDataProductManager()->hasProduct(input_product_name_)) {
-        spdlog::error("[{}] Input product '{}' not found", Name(), input_product_name_);
+        // Don't need an error, sometimes it's expected behavior that the input product is not available
+        // Example: running over events that may or may not includ the requested bank
+        spdlog::debug("[{}] Input product '{}' not found", Name(), input_product_name_);
         return;
     }
 
