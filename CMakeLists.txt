@@ -32,6 +32,7 @@ find_package(ROOT REQUIRED COMPONENTS Core RIO)
 find_package(TBB REQUIRED)
 find_package(analysis_pipeline_core REQUIRED)
 find_package(unpacker_data_products_core REQUIRED)
+find_package(unpacker_stages_core REQUIRED)
 find_package(analysis_pipeline REQUIRED)
 include(${ROOT_USE_FILE})
 
@@ -55,6 +56,7 @@ target_link_libraries(${PROJECT_NAME}
     analysis_pipeline::spdlog_header_only
     analysis_pipeline::nlohmann_json_header_only
     analysis_pipeline::unpacker_data_products_core
+    analysis_pipeline::unpacker_stages_core
     analysis_pipeline::analysis_pipeline
     ROOT::Core ROOT::RIO
 )
@@ -112,6 +114,7 @@ set(ROOT_DICTIONARY_INCLUDE_OPTIONS "-I${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 append_target_includes_to_root_dict(analysis_pipeline::analysis_pipeline_core)
 append_target_includes_to_root_dict(analysis_pipeline::unpacker_data_products_core)
+append_target_includes_to_root_dict(analysis_pipeline::unpacker_stages_core)
 append_target_includes_to_root_dict(TBB::tbb)
 append_target_includes_to_root_dict(analysis_pipeline::analysis_pipeline)
 

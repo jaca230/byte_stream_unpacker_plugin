@@ -1,4 +1,4 @@
-#include "analysis_pipeline/byte_stream_unpacker/stages/byte_stream_processor_stage.h"
+#include "analysis_pipeline/unpacker_core/stages/byte_stream_processor_stage.h"
 #include "analysis_pipeline/config/config_manager.h"
 #include "analysis_pipeline/pipeline/pipeline.h"
 

@@ -1,8 +1,8 @@
 #ifndef BYTE_STREAM_TO_REFLECTED_DATA_PRODUCT_STAGE_H
 #define BYTE_STREAM_TO_REFLECTED_DATA_PRODUCT_STAGE_H
 
-#include "analysis_pipeline/byte_stream_unpacker/stages/byte_stream_processor_stage.h"
-#include "analysis_pipeline/byte_stream_unpacker/utils/reflection_based_parser.h"
+#include "analysis_pipeline/unpacker_core/stages/byte_stream_processor_stage.h"
+#include "analysis_pipeline/unpacker_core/utils/reflection_based_parser.h"
 
 #include <memory>
 #include <string>
